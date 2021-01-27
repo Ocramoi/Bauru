@@ -26,10 +26,10 @@ header {
 }
 
 main {
-    padding: 10px;
-    padding-top: 4.2rem;
-    width: min(100vw, calc(100vh - 5.4rem));
-    height: min(100vw, calc(100vh - 5.4rem));
+    /* padding: 10px; */
+    padding-top: 4.5rem;
+    width: min(100vw, calc(100vh - 5.7rem));
+    height: min(100vw, calc(100vh - 5.7rem));
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,7 +38,7 @@ main {
                          'img5 img6 img7 img8'
                          'img9 img10 img11 img12'
                          'img13 img14 img15 img16';
-    grid-gap: 5px;
+    /* grid-gap: 5px; */
 }
 
 footer {
@@ -82,7 +82,6 @@ footer {
 }
 
 #textoVitoria {
-    /* overflow-y: scroll; */
     font-size: 1.5rem;
     display: table-cell;
     vertical-align: middle;
