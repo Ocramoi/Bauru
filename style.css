@@ -82,7 +82,7 @@ footer {
 }
 
 #textoVitoria {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     font-size: 1.5rem;
     display: table-cell;
     vertical-align: middle;

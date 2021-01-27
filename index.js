@@ -80,7 +80,7 @@ function tempoUpdate() {
 }
 
 function pecaClick(evento) {
-    if (clickTimeout) return;
+    if (clickTimeout || (clickedImgs.includes(evento.target))) return;
 
     let idx = parseInt(evento.target.id);
     pecas[idx].src = `assets/imgs/${imgs[idx]}`;
@@ -88,10 +88,10 @@ function pecaClick(evento) {
 }
 
 function fimDeJogo() {
-    console.log("Fim de jogo!");
+    clearInterval(tempoTmout);
     divMsg.style.display = "block";
     divMsg.style.height = "90%";
-    let textoVitoria = "<i>Imagens encontradas:</i><br><br>",
+    let textoVitoria = `Você venceu!<br>Seu tempo foi <b>${(new Date() - tempoInit)/1000} segundos</b><br><br><i>Imagens encontradas:</i><br><br>`,
         imgsRegistradas = [];
     for (let i = 0; i < imgs.length; ++i) {
         if (!(imgsRegistradas.includes(imgs[i]))) {
@@ -111,7 +111,7 @@ function checkClicks(clicada) {
             descobertas += 1;
             clickedImgs[0].onclick = clickedImgs[1].onclick = null;
             if (descobertas === 8) {
-                fimDejogo();
+                fimDeJogo();
             }
             clickedImgs = [];
         }
